@@ -8,4 +8,8 @@ module.exports = {
 
         return res.json(newPlanet);
     },
+    async index(req, res) {
+        const planets = await Planet.findAll();
+        return res.json(planets);
+    },
 };
