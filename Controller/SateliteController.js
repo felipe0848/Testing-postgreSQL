@@ -19,4 +19,14 @@ module.exports = {
         });
         return res.json(satelite);
     },
+    async index(req, res) {
+        const { planetId } = req.params;
+        const planet = await Planet.findByPk(planetId, {
+            include: Satelite,
+        });
+        if (!planet) {
+            return res.send("Esse planeta não existe");
+        }
+        return res.json(planet);
+    },
 };

@@ -9,6 +9,7 @@ routes.get("/planets", PlanetController.index);
 routes.put("/planets/:id", PlanetController.put);
 routes.delete("/planets/:id", PlanetController.delete);
 
-routes.post("/planet/:planetId/satelites", SateliteController.store);
+routes.post("/planets/:planetId/satelites", SateliteController.store);
+routes.get("/planets/:planetId/satelites", SateliteController.index);
 
 module.exports = routes;
