@@ -25,4 +25,12 @@ module.exports = {
         );
         return res.send("Planeta atualizado com sucesso!");
     },
+    async delete(req, res) {
+        await Planet.destroy({
+            where: {
+                id: req.params.id,
+            },
+        });
+        return res.send("Planeta excluido com sucesso!");
+    },
 };
