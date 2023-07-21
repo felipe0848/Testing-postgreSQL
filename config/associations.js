@@ -7,13 +7,15 @@ const Spaceship = require("../models/Spaceship");
 Planet.hasMany(Satelite, { onUpadate: "CASCADE", onDelete: "CASCADE" });
 Satelite.belongsTo(Planet, { foreingkey: "planetId", as: "planet" });
 
-Captain_spaceship.belongsToMany(Captain, {
-    foreingKey: "captainId",
-    as: "captains",
+Spaceship.belongsToMany(Captain, {
+    through: Captain_spaceship,
+    // foreingKey: "captainId",
+    // as: "captains",
 });
-Captain_spaceship.belongsToMany(Spaceship, {
-    foreingKey: "spaceshipId",
-    as: "spaceships",
+Captain.belongsToMany(Spaceship, {
+    through: Captain_spaceship,
+    // foreingKey: "spaceshipId",
+    // as: "spaceships",
 });
 
 module.exports = { Planet, Satelite };
