@@ -3,7 +3,7 @@ const sequelize = require("../config/sequelize");
 
 const Spaceship = sequelize.define("spaceships", {
     name: DataTypes.STRING,
-    serialNumber: DataTypes.INTEGER,
+    serial_number: DataTypes.INTEGER,
 });
 
 module.exports = Spaceship;
