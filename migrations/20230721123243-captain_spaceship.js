@@ -12,7 +12,7 @@ module.exports = {
             },
             captainId: {
                 type: Sequelize.INTEGER,
-                refereces: { model: "captain", key: "id" },
+                references: { model: "captains", key: "id" },
                 onUpadte: "CASCADE",
                 onDelete: "CASCADE",
             },
